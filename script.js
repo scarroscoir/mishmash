@@ -46,10 +46,6 @@ function showSlides() {
 
     // Show the current slide
     slides[slideIndex].style.display = "block";  
-
-    // Update the title below the image
-    const title = document.getElementById('slide-title');
-    title.textContent = slides[slideIndex].querySelector('p').textContent; // Get the title from the current slide
 }
 
 // Navigation functionality for the buttons
@@ -62,8 +58,3 @@ document.querySelector(".prev").addEventListener("click", function() {
     slideIndex--; // Decrement index for previous
     showSlides(); // Show the updated slide
 });
-
-// Set the initial slide to display when the page loads
-window.onload = function() {
-    document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
-};
