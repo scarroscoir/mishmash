@@ -64,11 +64,10 @@ body {
 }
 
 #portfolio-content {
-    background-color: #000000; /* Black background */
-    color: #f0f0f0; /* Off-white color for text */
+    background-color: #f7f7f7; /* Change from black to off-white */
+    color: #333; /* Adjust text color for better contrast with off-white */
     text-align: center;
     padding: 20px;
-}
 
 .slideshow-container {
     width: 100%; /* Full width */
