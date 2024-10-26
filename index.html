@@ -20,20 +20,21 @@
     </div>
 
     <div id="portfolio-content" style="display:none;">
-        <!-- Header with Title and Buttons -->
+        <!-- Header with Title -->
         <div class="header-container">
             <h1>Fáilte A Chara</h1>
         </div>
 
-        <!-- Slideshow with Navigation Buttons -->
-        <div class="slideshow-container">
-            <div class="button-container">
-                <a class="prev" onclick="showSlides(slideIndex -= 1)">❮</a>
-                <a class="next" onclick="showSlides(slideIndex += 1)">❯</a>
-            </div>
+        <!-- Navigation Buttons placed under the welcome message -->
+        <div class="button-container">
+            <a class="prev" onclick="showSlides(slideIndex -= 1)">❮</a>
+            <a class="next" onclick="showSlides(slideIndex += 1)">❯</a>
+        </div>
 
+        <!-- Slideshow with Images -->
+        <div class="slideshow-container">
             <!-- Slide Groups (Images with Captions) -->
-            <!-- Slide 1 Group -->
+                       <!-- Slide 1 Group -->
 <div class="mySlides">
     <div class="image-group">
         <img src="images/image1.jpg" alt="image1" class="portfolio-img">
@@ -117,14 +118,13 @@
         <p>9</p> <!-- Title for the main image -->
     </div>
 </div>
- 
-
-</div>
-
-        <!-- Background Music (Auto Play, Loop) -->
-        <audio id="background-music" src="ceol/brianborumarch.mp3" loop preload="auto"></audio>
+        </div>
     </div>
+
+    <!-- Background Music (Auto Play, Loop) -->
+    <audio id="background-music" src="ceol/brianborumarch.mp3" loop preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>
 </html>
+
