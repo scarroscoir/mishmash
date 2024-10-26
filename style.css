@@ -123,21 +123,3 @@ body {
     margin-bottom: 20px; /* Optional: Space below the header-container */
 }
 
-#play-music-btn {
-    font-size: 16px;
-    padding: 8px 12px;
-    background-color: #f0f0f0; /* Off-white background */
-    color: #000; /* Black text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline by default */
-}
-
-#play-music-btn:active {
-    text-decoration: underline; /* Add underline when clicked */
-}
-
-#play-music-btn:hover {
-    background-color: #e0e0e0; /* Slightly darker shade on hover */
-}
