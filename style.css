@@ -114,3 +114,19 @@ body {
     color: #333; /* Text color matching the new off-white background */
     text-align: center;
 }
+
+#play-music-btn {
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: #800020; /* Matches the curtain color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between text and button */
+    vertical-align: middle; /* Align with text */
+}
+
+#play-music-btn:hover {
+    background-color: #4a0011; /* Darken on hover */
+}
