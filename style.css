@@ -115,18 +115,29 @@ body {
     text-align: center;
 }
 
+.header-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 10px; /* Space between the heading and button */
+    margin-bottom: 20px; /* Optional: Space below the header-container */
+}
+
 #play-music-btn {
     font-size: 16px;
-    padding: 10px 15px;
-    background-color: #800020; /* Matches the curtain color */
-    color: #fff;
+    padding: 8px 12px;
+    background-color: #f0f0f0; /* Off-white background */
+    color: #000; /* Black text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px; /* Space between text and button */
-    vertical-align: middle; /* Align with text */
+    text-decoration: none; /* Remove underline by default */
+}
+
+#play-music-btn:active {
+    text-decoration: underline; /* Add underline when clicked */
 }
 
 #play-music-btn:hover {
-    background-color: #4a0011; /* Darken on hover */
+    background-color: #e0e0e0; /* Slightly darker shade on hover */
 }
