@@ -83,27 +83,29 @@ body {
     justify-content: center;
 }
 
-/* Button Styling for Navigation */
+/* Container for buttons under the welcome message */
 .button-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0; /* Space around buttons */
+    gap: 20px; /* Space between the buttons */
+    margin: 10px 0 20px; /* Adjust space above and below */
 }
 
+/* Style for prev and next navigation buttons */
 .prev, .next {
     cursor: pointer;
-    padding: 10px 20px;
-    font-size: 24px; /* Larger font size */
-    background-color: #000; /* Black background color */
-    color: #fff; /* White text */
-    border: none;
-    border-radius: 5px;
-    margin: 0 10px;
+    padding: 10px 15px; /* Padding for button size */
+    font-size: 24px; /* Arrow size */
+    color: #000; /* Black arrow */
+    background-color: #fff; /* White container */
+    border: 1px solid #000; /* Black border */
+    border-radius: 5px; /* Rounded edges */
+    text-decoration: none; /* Remove underline */
     transition: background-color 0.3s;
 }
 
 .prev:hover, .next:hover {
-    background-color: #444; /* Darken on hover */
+    background-color: #e0e0e0; /* Light gray on hover */
 }
 
 /* Image Group Styling */
