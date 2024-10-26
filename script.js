@@ -62,12 +62,12 @@ function showSlides() {
 
 // Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
-    slideIndex++;
+    slideIndex+;
     showSlides();
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
-    slideIndex--;
+    slideIndex-;
     showSlides();
 });
 
