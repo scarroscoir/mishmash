@@ -11,6 +11,7 @@ function checkPassword() {
     }
 }
 
+// Curtain Animation Function with Background Music Play
 function openCurtain() {
     const leftCurtain = document.getElementById('curtain-left');
     const rightCurtain = document.getElementById('curtain-right');
@@ -25,16 +26,18 @@ function openCurtain() {
 
         // Play background music
         const music = document.getElementById('background-music');
-        music.play();
+        if (music) {
+            music.play();
+        }
     }, 2000); // Delay to match curtain animation duration
 }
 
-// Gallery function
+// Gallery Slideshow Functionality
 let slideIndex = 0; // Current slide index
 
 function showSlides() {
     const slides = document.getElementsByClassName("mySlides");
-    
+
     // Hide all slides
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
@@ -49,15 +52,26 @@ function showSlides() {
 
     // Show the current slide
     slides[slideIndex].style.display = "block";  
+
+    // Optional: Update any title text or description
+    const title = document.getElementById('slide-title');
+    if (title && slides[slideIndex].querySelector('p')) {
+        title.textContent = slides[slideIndex].querySelector('p').textContent;
+    }
 }
 
-// Navigation functionality for the buttons
+// Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
-    slideIndex++; // Increment index for next
-    showSlides(); // Show the updated slide
+    slideIndex++;
+    showSlides();
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
-    slideIndex--; // Decrement index for previous
-    showSlides(); // Show the updated slide
+    slideIndex--;
+    showSlides();
 });
+
+// Initial Setup
+window.onload = function() {
+    document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
+};
