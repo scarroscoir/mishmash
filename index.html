@@ -20,20 +20,21 @@
     </div>
 
     <div id="portfolio-content" style="display:none;">
-    <h1>Fáilte A Chara</h1>
-    <div class="button-container">
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-    <div class="slideshow-container">
-        <!-- Your images and descriptions here as before -->
-    </div>
-    <audio id="background-music" src="ceol/brianborumarch.mp3" autoplay loop preload="auto"></audio>
-</div>
+        <!-- Header with Title and Buttons -->
+        <div class="header-container">
+            <h1>Fáilte A Chara</h1>
+            <button id="play-music" onclick="toggleMusic()">Seint Ceol</button>
+        </div>
 
+        <!-- Slideshow with Navigation Buttons -->
+        <div class="slideshow-container">
+            <div class="button-container">
+                <a class="prev" onclick="showSlides(slideIndex -= 1)">❮</a>
+                <a class="next" onclick="showSlides(slideIndex += 1)">❯</a>
+            </div>
 
-   
-        <!-- Slide 1 Group -->
+            <!-- Slide Groups (Images with Captions) -->
+            <!-- Slide 1 Group -->
 <div class="mySlides">
     <div class="image-group">
         <img src="images/image1.jpg" alt="image1" class="portfolio-img">
@@ -120,6 +121,10 @@
  
 
 </div>
+
+        <!-- Background Music (Auto Play, Loop) -->
+        <audio id="background-music" src="ceol/brianborumarch.mp3" loop preload="auto"></audio>
+    </div>
 
     <script src="script.js"></script>
 </body>
