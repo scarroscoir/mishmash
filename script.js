@@ -11,7 +11,6 @@ function checkPassword() {
     }
 }
 
-// Curtain Animation Function
 function openCurtain() {
     const leftCurtain = document.getElementById('curtain-left');
     const rightCurtain = document.getElementById('curtain-right');
@@ -23,6 +22,10 @@ function openCurtain() {
         document.getElementById('portfolio-content').style.display = 'block';
         document.body.style.overflow = 'auto'; // Allow scrolling after curtains open
         showSlides(); // Show the first slide when curtains open
+
+        // Play background music
+        const music = document.getElementById('background-music');
+        music.play();
     }, 2000); // Delay to match curtain animation duration
 }
 
