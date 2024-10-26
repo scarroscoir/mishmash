@@ -29,6 +29,13 @@ function openCurtain() {
     }, 2000); // Delay to match curtain animation duration
 }
 
+// Play Music Functionality
+document.getElementById('play-music-btn').addEventListener('click', function() {
+    const music = document.getElementById('background-music');
+    music.play();
+});
+
+
 // Gallery function
 let slideIndex = 0; // Current slide index
 
