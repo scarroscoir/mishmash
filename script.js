@@ -1,4 +1,4 @@
-console.log("Script loaded test6");
+console.log("Script loaded test7");
 
 // Check Password Function
 function checkPassword() {
