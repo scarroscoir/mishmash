@@ -7,7 +7,7 @@ function checkPassword() {
         document.getElementById('password-modal').style.display = 'none';
         openCurtain();
     } else {
-        alert('Incorrect Password');
+        alert('pasfhocal mícheart (brón orm)');
     }
 }
 
