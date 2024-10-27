@@ -1,4 +1,4 @@
-console.log("Script loaded test4");
+console.log("Script loaded test5");
 
 // Check Password Function
 function checkPassword() {
@@ -39,7 +39,6 @@ let slideIndex = 0; // Current slide index
 
 function showSlides() {
     const slides = document.getElementsByClassName("mySlides");
-    console.log(`Total slides: ${slides.length}`); // Log the number of slides
 
     // Hide all slides
     for (let i = 0; i < slides.length; i++) {
@@ -53,8 +52,10 @@ function showSlides() {
         slideIndex = slides.length - 1; // Go to the last slide if at the beginning
     }
 
+    // Log the current slideIndex
+    console.log(`Showing slide: ${slideIndex} (Total slides: ${slides.length})`);
+
     // Show the current slide
-    console.log(`Showing slide: ${slideIndex}`); // Log the slide being shown
     slides[slideIndex].style.display = "block";  
 
     // Optional: Update any title text or description
@@ -70,6 +71,7 @@ document.querySelector(".next").addEventListener("click", function() {
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex++; // Increment the slide index by 1
     console.log(`After incrementing: slideIndex = ${slideIndex}`);
+    console.log(`Current slideIndex before showing slide: ${slideIndex}`);
     showSlides(); // Call showSlides to display the current slide
 });
 
@@ -78,11 +80,11 @@ document.querySelector(".prev").addEventListener("click", function() {
     console.log(`Before decrementing: slideIndex = ${slideIndex}`);
     slideIndex--; // Decrement the slide index by 1
     console.log(`After decrementing: slideIndex = ${slideIndex}`);
+    console.log(`Current slideIndex before showing slide: ${slideIndex}`);
     showSlides(); // Call showSlides to display the current slide
 });
 
 // Initial Setup
 window.onload = function() {
-    console.log(`Initial slideIndex value: ${slideIndex}`); // Log initial value
     document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
 };
