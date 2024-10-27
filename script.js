@@ -1,4 +1,4 @@
-console.log("Script loaded test12");
+console.log("Script loaded test13");
 
 // Password Check Function
 function checkPassword() {
@@ -23,57 +23,55 @@ function openCurtain() {
 
     setTimeout(() => {
         document.getElementById('portfolio-content').style.display = 'block';
-        document.body.style.overflow = 'auto'; // Allow scrolling
-        showSlides(); // Display the first slide on curtain open
+        document.body.style.overflow = 'auto';
+        showSlides(slideIndex); // Show the first slide when curtains open
 
         // Play background music
         const music = document.getElementById('background-music');
         if (music) {
             music.play();
         }
-    }, 2000); // Match curtain animation duration
+    }, 2000);
 }
 
 // Slideshow Variables and Functionality
 let slideIndex = 0;
 
-function showSlides() {
+function showSlides(index) {
     const slides = document.getElementsByClassName("mySlides");
+
+    // Ensure slideIndex is within bounds
+    if (index >= slides.length) {
+        slideIndex = 0;
+    } else if (index < 0) {
+        slideIndex = slides.length - 1;
+    } else {
+        slideIndex = index;
+    }
 
     // Hide all slides
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-
-    // Keep slideIndex within bounds
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
+        slides[i].style.display = "none";
     }
 
     console.log(`Displaying slide index: ${slideIndex}`);
-
-    // Show the current slide
+    
+    // Display the current slide
     slides[slideIndex].style.display = "block";
 }
 
 // Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
-    slideIndex += 1;
-    console.log(`After incrementing: slideIndex = ${slideIndex}`);
-    showSlides();
+    showSlides(slideIndex + 1); // Only call showSlides with the incremented index
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
     console.log(`Before decrementing: slideIndex = ${slideIndex}`);
-    slideIndex -= 1;
-    console.log(`After decrementing: slideIndex = ${slideIndex}`);
-    showSlides();
+    showSlides(slideIndex - 1); // Only call showSlides with the decremented index
 });
 
 // Initial Setup
 window.onload = function() {
-    document.getElementById('portfolio-content').style.display = 'none'; // Hide until password is entered
+    document.getElementById('portfolio-content').style.display = 'none';
 };
