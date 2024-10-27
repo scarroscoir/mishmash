@@ -1,4 +1,4 @@
-console.log("Script loaded test14");
+console.log("Script loaded test15");
 
 // Password Check Function
 function checkPassword() {
@@ -26,7 +26,6 @@ function openCurtain() {
         document.body.style.overflow = 'auto';
         showSlides(); // Show the first slide when curtains open
 
-        // Play background music
         const music = document.getElementById('background-music');
         if (music) {
             music.play();
@@ -53,8 +52,6 @@ function showSlides() {
     }
 
     console.log(`Displaying slide index: ${slideIndex}`);
-
-    // Display the current slide
     slides[slideIndex].style.display = "block";
 }
 
@@ -62,12 +59,14 @@ function showSlides() {
 document.querySelector(".next").addEventListener("click", function() {
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex++; // Increment the slide index by 1
+    console.log(`After incrementing: slideIndex = ${slideIndex}`);
     showSlides();
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
     console.log(`Before decrementing: slideIndex = ${slideIndex}`);
     slideIndex--; // Decrement the slide index by 1
+    console.log(`After decrementing: slideIndex = ${slideIndex}`);
     showSlides();
 });
 
