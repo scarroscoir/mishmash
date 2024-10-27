@@ -1,4 +1,4 @@
-console.log("Script loaded test17");
+console.log("Script loaded test18");
 
 // Password Check Function
 function checkPassword() {
@@ -75,4 +75,3 @@ document.querySelector(".prev").addEventListener("click", function(event) {
 window.onload = function() {
     document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
 };
-
