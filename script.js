@@ -1,4 +1,4 @@
-console.log("Script loaded test19");
+console.log("Script loaded test20");
 
 // Password Check Function
 function checkPassword() {
@@ -43,7 +43,7 @@ function showSlides() {
         slides[i].style.display = "none";  
     }
 
-    // Reset slideIndex if out of bounds
+    // Ensure slideIndex is within bounds
     if (slideIndex >= slides.length) {
         slideIndex = 0; // Reset to the first slide if at the end
     } else if (slideIndex < 0) {
@@ -54,16 +54,16 @@ function showSlides() {
     slides[slideIndex].style.display = "block";  // Show the current slide
 }
 
-// Navigation for Slideshow with Single Event Propagation
+// Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function(event) {
-    event.stopPropagation(); // Ensures no extra events are triggered
+    event.preventDefault(); // Prevent default behavior (if any)
     slideIndex++; // Increment index for next
     console.log(`Next clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
 });
 
 document.querySelector(".prev").addEventListener("click", function(event) {
-    event.stopPropagation(); // Ensures no extra events are triggered
+    event.preventDefault(); // Prevent default behavior (if any)
     slideIndex--; // Decrement index for previous
     console.log(`Prev clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
