@@ -1,6 +1,41 @@
-console.log("Script loaded test11");
+console.log("Script loaded test12");
 
-let slideIndex = 0; // Current slide index
+// Password Check Function
+function checkPassword() {
+    const password = document.getElementById('password').value;
+    const correctPassword = 'MISHMASHABÚ'; // Replace with your password
+
+    if (password === correctPassword) {
+        document.getElementById('password-modal').style.display = 'none';
+        openCurtain();
+    } else {
+        alert('pasfhocal mícheart (brón orm)');
+    }
+}
+
+// Curtain Animation Function with Background Music
+function openCurtain() {
+    const leftCurtain = document.getElementById('curtain-left');
+    const rightCurtain = document.getElementById('curtain-right');
+
+    leftCurtain.style.transform = 'translateX(-100%)';
+    rightCurtain.style.transform = 'translateX(100%)';
+
+    setTimeout(() => {
+        document.getElementById('portfolio-content').style.display = 'block';
+        document.body.style.overflow = 'auto'; // Allow scrolling
+        showSlides(); // Display the first slide on curtain open
+
+        // Play background music
+        const music = document.getElementById('background-music');
+        if (music) {
+            music.play();
+        }
+    }, 2000); // Match curtain animation duration
+}
+
+// Slideshow Variables and Functionality
+let slideIndex = 0;
 
 function showSlides() {
     const slides = document.getElementsByClassName("mySlides");
@@ -10,19 +45,20 @@ function showSlides() {
         slides[i].style.display = "none";  
     }
 
-    // Ensure slideIndex is within bounds
+    // Keep slideIndex within bounds
     if (slideIndex >= slides.length) {
-        slideIndex = 0; // Reset to the first slide if at the end
+        slideIndex = 0;
     } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1; // Go to the last slide if at the beginning
+        slideIndex = slides.length - 1;
     }
 
-    console.log(`Displaying slide index: ${slideIndex}`); // Log the slide index
+    console.log(`Displaying slide index: ${slideIndex}`);
 
     // Show the current slide
     slides[slideIndex].style.display = "block";
 }
 
+// Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex += 1;
@@ -37,8 +73,7 @@ document.querySelector(".prev").addEventListener("click", function() {
     showSlides();
 });
 
-// Initial setup to hide content until curtains open and show first slide
+// Initial Setup
 window.onload = function() {
-    document.getElementById('portfolio-content').style.display = 'none';
-    showSlides(); // Display the first slide by default
+    document.getElementById('portfolio-content').style.display = 'none'; // Hide until password is entered
 };
