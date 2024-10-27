@@ -1,4 +1,4 @@
-console.log("Script loaded test1");
+console.log("Script loaded test2");
 
 // Check Password Function
 function checkPassword() {
@@ -74,6 +74,21 @@ document.querySelector(".prev").addEventListener("click", function() {
     console.log(slideIndex);
     showSlides(); // Call showSlides to display the current slide
 });
+
+console.log("Adding event listener to next button");
+document.querySelector(".next").addEventListener("click", function() {
+    slideIndex++;
+    console.log(slideIndex);
+    showSlides();
+});
+
+console.log("Adding event listener to prev button");
+document.querySelector(".prev").addEventListener("click", function() {
+    slideIndex--;
+    console.log(slideIndex);
+    showSlides();
+});
+
 
 
 // Initial Setup
