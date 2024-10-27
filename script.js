@@ -1,4 +1,4 @@
-console.log("Script loaded test5");
+console.log("Script loaded test6");
 
 // Check Password Function
 function checkPassword() {
@@ -71,7 +71,6 @@ document.querySelector(".next").addEventListener("click", function() {
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex++; // Increment the slide index by 1
     console.log(`After incrementing: slideIndex = ${slideIndex}`);
-    console.log(`Current slideIndex before showing slide: ${slideIndex}`);
     showSlides(); // Call showSlides to display the current slide
 });
 
@@ -80,11 +79,11 @@ document.querySelector(".prev").addEventListener("click", function() {
     console.log(`Before decrementing: slideIndex = ${slideIndex}`);
     slideIndex--; // Decrement the slide index by 1
     console.log(`After decrementing: slideIndex = ${slideIndex}`);
-    console.log(`Current slideIndex before showing slide: ${slideIndex}`);
     showSlides(); // Call showSlides to display the current slide
 });
 
 // Initial Setup
 window.onload = function() {
     document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
+    showSlides(); // Show the initial slide on load
 };
