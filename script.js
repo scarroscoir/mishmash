@@ -1,6 +1,7 @@
-console.log("Script loaded test20");
+console.log("Script loaded test21");
 
-// Password Check Function
+let slideIndex = 0; // Initialize slideIndex
+
 function checkPassword() {
     const password = document.getElementById('password').value;
     const correctPassword = 'MISHMASHABÚ'; // Replace with your password
@@ -13,7 +14,6 @@ function checkPassword() {
     }
 }
 
-// Curtain Animation Function with Background Music
 function openCurtain() {
     const leftCurtain = document.getElementById('curtain-left');
     const rightCurtain = document.getElementById('curtain-right');
@@ -31,9 +31,6 @@ function openCurtain() {
         }
     }, 2000);
 }
-
-// Slideshow Variables
-let slideIndex = 0;
 
 function showSlides() {
     const slides = document.getElementsByClassName("mySlides");
@@ -56,14 +53,14 @@ function showSlides() {
 
 // Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default behavior (if any)
+    event.preventDefault(); // Prevent default behavior
     slideIndex++; // Increment index for next
     console.log(`Next clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
 });
 
 document.querySelector(".prev").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default behavior (if any)
+    event.preventDefault(); // Prevent default behavior
     slideIndex--; // Decrement index for previous
     console.log(`Prev clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
