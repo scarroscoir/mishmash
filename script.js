@@ -1,4 +1,4 @@
-console.log("Script loaded test9");
+console.log("Script loaded test10");
 
 // Check Password Function
 function checkPassword() {
@@ -53,38 +53,29 @@ function showSlides() {
     }
 
     // Log the current slide index before showing
-    console.log(`Displaying slide index: ${slideIndex}`);
+    console.log(`Displaying slide index: ${slideIndex}`); // Track displayed slide
 
     // Show the current slide
     slides[slideIndex].style.display = "block";  
-
-    // Optional: Update any title text or description
-    const title = document.getElementById('slide-title');
-    if (title && slides[slideIndex].querySelector('p')) {
-        title.textContent = slides[slideIndex].querySelector('p').textContent;
-    }
 }
 
-// Clear any existing event listeners and add new ones
-const nextButton = document.querySelector(".next");
-const prevButton = document.querySelector(".prev");
-
-// Replace existing buttons to clear listeners
-nextButton.replaceWith(nextButton.cloneNode(true));
-prevButton.replaceWith(prevButton.cloneNode(true));
-
+// Navigation for Slideshow with Explicit State Control
 document.querySelector(".next").addEventListener("click", function() {
-    console.log(`Before incrementing: slideIndex = ${slideIndex}`);
-    slideIndex++; // Increment the slide index by 1
-    console.log(`After incrementing: slideIndex = ${slideIndex}`);
-    showSlides();
+    if (slideIndex < document.getElementsByClassName("mySlides").length - 1) {
+        console.log(`Before incrementing: slideIndex = ${slideIndex}`);
+        slideIndex++;
+        console.log(`After incrementing: slideIndex = ${slideIndex}`);
+        showSlides();
+    }
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
-    console.log(`Before decrementing: slideIndex = ${slideIndex}`);
-    slideIndex--; // Decrement the slide index by 1
-    console.log(`After decrementing: slideIndex = ${slideIndex}`);
-    showSlides();
+    if (slideIndex > 0) {
+        console.log(`Before decrementing: slideIndex = ${slideIndex}`);
+        slideIndex--;
+        console.log(`After decrementing: slideIndex = ${slideIndex}`);
+        showSlides();
+    }
 });
 
 // Initial Setup
