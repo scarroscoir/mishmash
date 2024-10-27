@@ -1,4 +1,4 @@
-console.log("Script loaded test8");
+console.log("Script loaded test9");
 
 // Check Password Function
 function checkPassword() {
@@ -53,7 +53,7 @@ function showSlides() {
     }
 
     // Log the current slide index before showing
-    console.log(`Displaying slide index: ${slideIndex}`); // Add this line
+    console.log(`Displaying slide index: ${slideIndex}`);
 
     // Show the current slide
     slides[slideIndex].style.display = "block";  
@@ -65,21 +65,26 @@ function showSlides() {
     }
 }
 
-// Navigation for Slideshow
-console.log("Adding event listener to next button");
+// Clear any existing event listeners and add new ones
+const nextButton = document.querySelector(".next");
+const prevButton = document.querySelector(".prev");
+
+// Replace existing buttons to clear listeners
+nextButton.replaceWith(nextButton.cloneNode(true));
+prevButton.replaceWith(prevButton.cloneNode(true));
+
 document.querySelector(".next").addEventListener("click", function() {
-    console.log(`Before incrementing: slideIndex = ${slideIndex}`); // Add log before increment
+    console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex++; // Increment the slide index by 1
-    console.log(`After incrementing: slideIndex = ${slideIndex}`); // Log after increment
-    showSlides(); // Call showSlides to display the current slide
+    console.log(`After incrementing: slideIndex = ${slideIndex}`);
+    showSlides();
 });
 
-console.log("Adding event listener to prev button");
 document.querySelector(".prev").addEventListener("click", function() {
-    console.log(`Before decrementing: slideIndex = ${slideIndex}`); // Add log before decrement
+    console.log(`Before decrementing: slideIndex = ${slideIndex}`);
     slideIndex--; // Decrement the slide index by 1
-    console.log(`After decrementing: slideIndex = ${slideIndex}`); // Log after decrement
-    showSlides(); // Call showSlides to display the current slide
+    console.log(`After decrementing: slideIndex = ${slideIndex}`);
+    showSlides();
 });
 
 // Initial Setup
