@@ -1,4 +1,4 @@
-console.log("Script loaded test18");
+console.log("Script loaded test19");
 
 // Password Check Function
 function checkPassword() {
@@ -32,18 +32,18 @@ function openCurtain() {
     }, 2000);
 }
 
-// Slideshow Variables and Functionality
+// Slideshow Variables
 let slideIndex = 0;
 
 function showSlides() {
     const slides = document.getElementsByClassName("mySlides");
-
+    
     // Hide all slides
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
 
-    // Ensure slideIndex is within bounds
+    // Reset slideIndex if out of bounds
     if (slideIndex >= slides.length) {
         slideIndex = 0; // Reset to the first slide if at the end
     } else if (slideIndex < 0) {
@@ -57,21 +57,20 @@ function showSlides() {
 // Navigation for Slideshow with Single Event Propagation
 document.querySelector(".next").addEventListener("click", function(event) {
     event.stopPropagation(); // Ensures no extra events are triggered
-    console.log(`Before incrementing: slideIndex = ${slideIndex}`);
     slideIndex++; // Increment index for next
-    console.log(`After incrementing: slideIndex = ${slideIndex}`);
+    console.log(`Next clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
 });
 
 document.querySelector(".prev").addEventListener("click", function(event) {
     event.stopPropagation(); // Ensures no extra events are triggered
-    console.log(`Before decrementing: slideIndex = ${slideIndex}`);
     slideIndex--; // Decrement index for previous
-    console.log(`After decrementing: slideIndex = ${slideIndex}`);
+    console.log(`Prev clicked: slideIndex = ${slideIndex}`);
     showSlides(); // Show the updated slide
 });
 
 // Initial Setup
 window.onload = function() {
     document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
+    showSlides(); // Show the first slide when the page loads
 };
