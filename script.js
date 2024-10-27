@@ -65,11 +65,13 @@ function showSlides() {
 // Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
     slideIndex++; // Increment the slide index by 1
+    console.log(slideIndex);
     showSlides(); // Call showSlides to display the current slide
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
     slideIndex--; // Decrement the slide index by 1
+    console.log(slideIndex);
     showSlides(); // Call showSlides to display the current slide
 });
 
