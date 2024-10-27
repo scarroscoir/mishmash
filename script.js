@@ -1,4 +1,4 @@
-console.log("Script loaded test7");
+console.log("Script loaded test8");
 
 // Check Password Function
 function checkPassword() {
@@ -52,8 +52,8 @@ function showSlides() {
         slideIndex = slides.length - 1; // Go to the last slide if at the beginning
     }
 
-    // Log the current slideIndex
-    console.log(`Showing slide: ${slideIndex} (Total slides: ${slides.length})`);
+    // Log the current slide index before showing
+    console.log(`Displaying slide index: ${slideIndex}`); // Add this line
 
     // Show the current slide
     slides[slideIndex].style.display = "block";  
@@ -68,22 +68,21 @@ function showSlides() {
 // Navigation for Slideshow
 console.log("Adding event listener to next button");
 document.querySelector(".next").addEventListener("click", function() {
-    console.log(`Before incrementing: slideIndex = ${slideIndex}`);
+    console.log(`Before incrementing: slideIndex = ${slideIndex}`); // Add log before increment
     slideIndex++; // Increment the slide index by 1
-    console.log(`After incrementing: slideIndex = ${slideIndex}`);
+    console.log(`After incrementing: slideIndex = ${slideIndex}`); // Log after increment
     showSlides(); // Call showSlides to display the current slide
 });
 
 console.log("Adding event listener to prev button");
 document.querySelector(".prev").addEventListener("click", function() {
-    console.log(`Before decrementing: slideIndex = ${slideIndex}`);
+    console.log(`Before decrementing: slideIndex = ${slideIndex}`); // Add log before decrement
     slideIndex--; // Decrement the slide index by 1
-    console.log(`After decrementing: slideIndex = ${slideIndex}`);
+    console.log(`After decrementing: slideIndex = ${slideIndex}`); // Log after decrement
     showSlides(); // Call showSlides to display the current slide
 });
 
 // Initial Setup
 window.onload = function() {
     document.getElementById('portfolio-content').style.display = 'none'; // Keep content hidden until password is entered
-    showSlides(); // Show the initial slide on load
 };
