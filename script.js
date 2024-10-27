@@ -1,4 +1,4 @@
-console.log("Script loaded test2");
+console.log("Script loaded test3");
 
 // Check Password Function
 function checkPassword() {
@@ -63,33 +63,19 @@ function showSlides() {
 }
 
 // Navigation for Slideshow
+console.log("Adding event listener to next button");
 document.querySelector(".next").addEventListener("click", function() {
     slideIndex++; // Increment the slide index by 1
     console.log(slideIndex);
     showSlides(); // Call showSlides to display the current slide
 });
 
+console.log("Adding event listener to prev button");
 document.querySelector(".prev").addEventListener("click", function() {
     slideIndex--; // Decrement the slide index by 1
     console.log(slideIndex);
     showSlides(); // Call showSlides to display the current slide
 });
-
-console.log("Adding event listener to next button");
-document.querySelector(".next").addEventListener("click", function() {
-    slideIndex++;
-    console.log(slideIndex);
-    showSlides();
-});
-
-console.log("Adding event listener to prev button");
-document.querySelector(".prev").addEventListener("click", function() {
-    slideIndex--;
-    console.log(slideIndex);
-    showSlides();
-});
-
-
 
 // Initial Setup
 window.onload = function() {
