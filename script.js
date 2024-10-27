@@ -1,4 +1,4 @@
-console.log("Script loaded test15");
+console.log("Script loaded test16");
 
 // Password Check Function
 function checkPassword() {
@@ -24,8 +24,7 @@ function openCurtain() {
     setTimeout(() => {
         document.getElementById('portfolio-content').style.display = 'block';
         document.body.style.overflow = 'auto';
-        showSlides(); // Show the first slide when curtains open
-
+        showSlides();
         const music = document.getElementById('background-music');
         if (music) {
             music.play();
@@ -55,17 +54,19 @@ function showSlides() {
     slides[slideIndex].style.display = "block";
 }
 
-// Navigation for Slideshow
-document.querySelector(".next").addEventListener("click", function() {
+// Navigation for Slideshow with Single Event Propagation
+document.querySelector(".next").addEventListener("click", function(event) {
+    event.stopPropagation(); // Ensures no extra events are triggered
     console.log(`Before incrementing: slideIndex = ${slideIndex}`);
-    slideIndex++; // Increment the slide index by 1
+    slideIndex++;
     console.log(`After incrementing: slideIndex = ${slideIndex}`);
     showSlides();
 });
 
-document.querySelector(".prev").addEventListener("click", function() {
+document.querySelector(".prev").addEventListener("click", function(event) {
+    event.stopPropagation(); // Ensures no extra events are triggered
     console.log(`Before decrementing: slideIndex = ${slideIndex}`);
-    slideIndex--; // Decrement the slide index by 1
+    slideIndex--;
     console.log(`After decrementing: slideIndex = ${slideIndex}`);
     showSlides();
 });
