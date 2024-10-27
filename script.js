@@ -64,14 +64,15 @@ function showSlides() {
 
 // Navigation for Slideshow
 document.querySelector(".next").addEventListener("click", function() {
-    slideIndex+;
+    slideIndex++; // Increments the slide index by one
     showSlides();
 });
 
 document.querySelector(".prev").addEventListener("click", function() {
-    slideIndex-;
+    slideIndex--; // Decrements the slide index by one
     showSlides();
 });
+
 
 // Initial Setup
 window.onload = function() {
