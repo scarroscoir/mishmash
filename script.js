@@ -1,3 +1,5 @@
+console.log("Script loaded");
+
 // Check Password Function
 function checkPassword() {
     const password = document.getElementById('password').value;
